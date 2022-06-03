@@ -23,5 +23,6 @@ Multi-task semantic segmentation-convolutional neural network for detecting crop
 
 ## Weights
 * [BoniRob](https://drive.google.com/file/d/1rwvZnqUuBa1z5Kd05_9CHJOzeJFa0uZM/view?usp=sharing)
+* [Large-sized BoniRob](https://drive.google.com/file/d/1eYQx69hd_TnwLqJfO8blo2VkTsrTHzwk/view?usp=sharing)
 * [CWFID](https://drive.google.com/file/d/1Kiv72yYO-k76Fgg9aM_nIEO799sn47c2/view?usp=sharing)
 * [rice seedling and weed](https://drive.google.com/file/d/1ELJER9e0d-hOmZyTix33u0V2wDpABCTB/view?usp=sharing)
