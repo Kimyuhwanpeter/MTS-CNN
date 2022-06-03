@@ -300,16 +300,18 @@ def cal_loss(model, model2, images, labels, objectiness, class_imbal_labels_buf,
         total_loss = true_dice_loss(objectiness, logits[:, 2])
         
         only_crop_indices = tf.squeeze(tf.where(tf.equal(batch_labels, 0)), -1).numpy()
-        only_crop_labels = np.zeros([FLAGS.batch_size*FLAGS.img_size*FLAGS.img_size,], np.uint8)
-        only_crop_labels[only_crop_indices] = 1
-        only_crop_labels = tf.cast(only_crop_labels, tf.float32)
-        total_loss += true_dice_loss(only_crop_labels, logits[:, 0])
+        if len(only_crop_indices) != 0:
+            only_crop_labels = np.zeros([FLAGS.batch_size*FLAGS.img_size*FLAGS.img_size,], np.uint8)
+            only_crop_labels[only_crop_indices] = 1
+            only_crop_labels = tf.cast(only_crop_labels, tf.float32)
+            total_loss += true_dice_loss(only_crop_labels, logits[:, 0])
         
-        only_weed_indices = tf.squeeze(tf.where(tf.equal(batch_labels, 1)), -1)
-        only_weed_labels = np.zeros([FLAGS.batch_size*FLAGS.img_size*FLAGS.img_size,], np.uint8)
-        only_weed_labels[only_weed_indices] = 1
-        only_weed_labels = tf.cast(only_weed_labels, tf.float32)
-        total_loss += true_dice_loss(only_weed_labels, logits[:, 1])
+        only_weed_indices = tf.squeeze(tf.where(tf.equal(batch_labels, 1)), -1).numpy()
+        if len(only_weed_indices) != 0:
+            only_weed_labels = np.zeros([FLAGS.batch_size*FLAGS.img_size*FLAGS.img_size,], np.uint8)
+            only_weed_labels[only_weed_indices] = 1
+            only_weed_labels = tf.cast(only_weed_labels, tf.float32)
+            total_loss += true_dice_loss(only_weed_labels, logits[:, 1])
         
         # Crop and weed 
         non_background_indices = tf.squeeze(tf.where(tf.not_equal(batch_labels, 2)), -1)
