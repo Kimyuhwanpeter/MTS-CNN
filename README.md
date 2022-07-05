@@ -1,7 +1,7 @@
 # MTS-CNN: Multi-task semantic segmentation-convolutional neural network for detecting crops and weeds
 Multi-task semantic segmentation-convolutional neural network for detecting crops and weeds System. Any works that uses the provided pretrained network must acknowledge the authors by including the following reference.
 
-    Yu Hwan Kim and Kang Ryoung Park, “MTS-CNN: Multi-task semantic segmentation-convolutional neural network for detecting crops and weeds,” Computers and Electronics in Agriculture, in submission 
+    Yu Hwan Kim and Kang Ryoung Park, “MTS-CNN: Multi-task semantic segmentation-convolutional neural network for detecting crops and weeds,” Computers and Electronics in Agriculture, Publish 
     
 <br>
 
